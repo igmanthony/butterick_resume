@@ -1,0 +1,204 @@
+% Using LuaLaTeX for this, compile twice for proper page numbers.
+% Just using an article class - means extra parameters in the header area.
+\documentclass[11pt]{article}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage[utf8x]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage[expansion=true,protrusion=true]{microtype}
+\usepackage[top=1.25in,bottom=1.25in,left=1.3in,right=1.5in]{geometry}
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text,Numbers=OldStyle,Contextuals=Alternate,Ligatures=Contextual,ItalicFeatures={Ligatures=Contextual}]{Linux Libertine}[SmallCapsFeatures=
+	{LetterSpace=7.5},WordSpace={1.5,1.5,1.5}]
+\setsansfont[Mapping=tex-text]{Linux Biolinum}[SmallCapsFeatures=
+	{LetterSpace=7.5},WordSpace={1.75,1.75,1.75}]
+\newfontfamily\headerfont[LetterSpace=12,WordSpace={2,2,2}]{Raleway ExtraBold}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{8pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}
+{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titleformat{\section}
+{\vspace{15pt}{\titlerule[1.4pt]}\vspace{0.1em}}
+{\thesection}{-2.8em}{\headerfont\bfseries\footnotesize\MakeUppercase}
+\titleformat{\subsection}
+{\vspace{-0.5ex}}{\thesubsection}{0em}{\large\scshape}
+\titleformat{\subsubsection}
+{}{\thesubsection}{-3em}{\footnotesize\bfseries\textsf}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\setlist[itemize]{leftmargin=0.5cm, rightmargin=0.5cm}
+\usepackage{multicol}
+\frenchspacing
+\pagestyle{fancy}
+
+% I like my name and page number on the footer.
+\cfoot{}
+\rfoot{\textsf{\scshape{Your Name Here} | \thepage\ of \pageref{LastPage}}}
+% =============================================================================
+
+\newcommand{\MyName}[1]{
+		\Huge \begin{center} \textsf{\textsc{#1}} \end{center}
+		\vspace{-20pt} \par \normalsize \normalfont
+		}
+
+\newcommand{\MyInformation}[1]{
+		\large \begin{center} \textsf{\scshape{#1}} \end{center}
+		\vspace{-15pt} \par \normalsize \normalfont
+		}
+
+% =============================================================================
+% =============================================================================
+
+\begin{document}
+\thispagestyle{empty}
+\MyName{Your Name}
+\MyInformation{1000 S. 5\textsuperscript{th} St. Apt 100, City, ST, 75309 \\
+               800 867 5390 --- \Large \href{mailto:your_email@email.com}
+	          {your\_email@email.com}
+}
+
+% =============================================================================
+
+\section*{Education}
+\subsection*{Great University \hfill 2015--2020 (Est.)}
+Ph.D. in Basket Weaving
+
+Advisor: Dr. Scientist Man
+
+\subsection*{University of Meh \hfill 2008--13}
+B.S. in Toe Cutting
+
+\subsection*{State College \hfill 2006--08}
+
+% =============================================================================
+
+\section*{Employment}
+\subsection*{Company Name \hfill 2015--Present}
+
+\begin{itemize}
+\subsubsection*{Position Title \hfill 2016--Present}
+\item Analyzed Stuff
+\item Trained People
+\item Wrote Things
+\item Taught People
+
+\subsubsection*{Other Position \hfill Spring 2018}
+\item Instructed People
+
+\subsubsection*{Even More Positions \hfill Fall 2015}
+\item Educated People
+\end{itemize}
+
+\subsection*{Different Company \hfill 2008--15}
+\begin{itemize}
+\subsubsection*{Position \hfill 2014--15}
+\item Determined things
+\item Traveled to places
+
+\subsubsection*{Different Position \hfill 2013--14}
+\item Managed people
+
+\subsubsection*{Third Position \hfill 2009--10}
+\item Coordinated events
+\item Communicated things to people
+
+\subsubsection*{Fourth position \hfill 2008--13}
+\item Built things
+\end{itemize}
+
+% =============================================================================
+
+\section*{Research Experience}
+\subsection*{Great University \hfill 2015--Present}
+\begin{itemize}
+\subsubsection*{Researcher in Dr. Awesome Man's Research Group
+\hfill 2015--Present}
+\item Developed science
+\item Authored software
+\item Combined techniques
+\subsubsection*{Mentor \hfill 2016--Present}
+Mentored undergraduate students 
+\end{itemize}
+
+% =============================================================================
+
+\section*{PUBLICATIONS}
+
+\subsection*{In Preparation}
+
+\begin{itemize}[label={},itemsep=7pt]
+
+\item \textbf{Your Name}; Co-author; End Author.
+``Title of Publication''
+\textit{Submitted for Review to Journal Name}
+
+\end{itemize}
+
+\subsection*{Peer-Reviewed}
+
+\begin{itemize}[label={},itemsep=7pt]
+
+\item \textbf{Your Name}; Co-author; Corresponding author.
+``Other Publication Title''
+\textit{Journal Name}
+\textbf{2018},
+\textit{32} (10),
+Pages--Pages
+
+\item \textbf{Your Name}; Co-author; Corresponding author.
+``Other Publication Title''
+\textit{Journal Name}
+\textbf{2018},
+\textit{32} (10),
+Pages--Pages
+\end{itemize}
+
+% =============================================================================
+
+\section*{Presentations}
+\begin{itemize}[label={},itemsep=7pt]
+
+\item \textbf{Your Name}; Other People; Final Author.
+``Title of Presentation''
+\textit{Conference Name},
+City, ST,
+June 4\textsuperscript{th}, \textbf{2019}
+(Poster)
+
+\item \textbf{Your Name}; Other People; Final Author.
+``Title of Presentation''
+\textit{Conference Name},
+City, ST,
+June 4\textsuperscript{th}, \textbf{2019}
+(Oral)
+
+\end{itemize}
+
+% =============================================================================
+
+\section*{Awards and Scholarships}
+\subsubsection*{Outstanding Award \hfill April 2019}
+\subsubsection*{Kickass win (1\textsuperscript{st} place) \hfill April 2018}
+\subsubsection*{Boring Scholarship \hfill Spring 2008}
+
+% =============================================================================
+
+\section*{Professional Service}
+\subsubsection*{Service \hfill 2016--19}
+\subsubsection*{Service \hfill 2017, 2019}
+
+
+% =============================================================================
+
+\section*{Skills and Personality}
+\begin{itemize}
+	\item Willing to travel
+	\item Enjoys presentations and public speaking
+	\item Award winning smile
+	\item Able to learn new skills quickly
+\end{itemize}
+\end{document}
